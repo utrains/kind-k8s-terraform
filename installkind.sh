@@ -33,10 +33,22 @@ nodes:
       hostPort: 30001
   - role: worker
   - role: worker
-#  - role: worker
 EOF
 
 # Initialize cluster 
 
-kind create cluster --name demo-cluster --config kind.yml
-kubectl cluster-info --context kind-demo-cluster
+# kind create cluster --name demo-cluster --config kind.yml
+kind create cluster --name demo-cluster --config kind.yml 2>&1 | tee output_logger.txt
+OUT_PUT_STRING=`cat output_logger.txt`
+
+BIGIN_STRING="cluster-info"
+END_STRING="Have"
+
+RESULT="${OUT_PUT_STRING#*${BIGIN_STRING}}"
+RESULT="${RESULT%${END_STRING}*}"
+
+echo $RESULT
+
+echo "--------> The config command is : kubectl cluster-info $RESULT"
+
+kubectl cluster-info$RESULT
