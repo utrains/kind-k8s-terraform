@@ -19,3 +19,6 @@ mv ./kubectl /usr/bin/kubectl
 ```bash
 kind create cluster --name demo-cluster --config cluster-kind.yml
 ```
+
+# After set up check if you can see the nodes of the cluster
+kubectl get nodes
