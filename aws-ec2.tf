@@ -58,7 +58,7 @@ resource "aws_instance" "ec2_instance" {
   subnet_id              = aws_default_subnet.default_az1.id
   vpc_security_group_ids = [aws_security_group.kind_security_group.id]
   key_name               = aws_key_pair.jenkins_key.key_name
-  user_data            = file("installkind.sh")
+  #user_data            = file("installkind.sh")
 
 
   tags = {
@@ -84,7 +84,7 @@ resource "null_resource" "example_provisioner" {
     destination = "/tmp/installkind.sh"
   }
 
-  // change permissions to executable and pipe its output into a new file
+  //Change permissions to executable and pipe its output into a new file
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/installkind.sh",
