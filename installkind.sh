@@ -37,8 +37,8 @@ EOF
 
 # Initialize cluster 
 
-# kind create cluster --name demo-cluster --config kind.yml
-kind create cluster --name demo-cluster --config kind.yml 2>&1 | tee output_logger.txt
+# kind create cluster --name dev-cluster --config kind.yml
+kind create cluster --name dev-cluster --config kind.yml 2>&1 | tee output_logger.txt
 OUT_PUT_STRING=`cat output_logger.txt`
 
 BIGIN_STRING="cluster-info"
