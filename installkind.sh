@@ -23,7 +23,7 @@ sudo mv ./kubectl /usr/bin/kubectl
 
 ### Generate config file
 
-cat <<EOF | sudo tee kind.yml 
+cat <<EOF | tee kind.yml 
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:

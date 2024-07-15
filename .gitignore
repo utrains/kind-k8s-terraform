@@ -1,6 +1,6 @@
 # Local .terraform directories
 **/.terraform/*
-
+kind-key-pair.pem
 # .tfstate files
 *.tfstate
 *.tfstate.*
